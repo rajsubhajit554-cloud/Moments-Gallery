@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Live Event Moments | Shared Photo Gallery</title>
-  <meta name="description" content="লাইভ ফটো আপলোড এবং শেয়ারড গ্যালারি - গুগল ড্রাইভ সিঙ্কড">
+  <title>Moments Gallery | Live Shared Memories</title>
+  <meta name="description" content="লাইভ ফটো আপলোড এবং শেয়ারড ক্লাউড গ্যালারি - গুগল ড্রাইভ সরাসরি সিঙ্কড">
 
-  <!-- Google Fonts -->
+  <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- QRCode.js Library for instant on-screen QR Code generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <style>
     :root {
-      --bg-main: #090d16;
-      --bg-card: rgba(22, 30, 49, 0.7);
-      --bg-card-hover: rgba(30, 41, 67, 0.85);
-      --accent-primary: #38bdf8;
-      --accent-secondary: #818cf8;
-      --accent-gradient: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
-      --accent-glow: rgba(56, 189, 248, 0.35);
+      --bg-dark: #050811;
+      --bg-surface: rgba(13, 20, 36, 0.65);
+      --bg-surface-hover: rgba(22, 33, 58, 0.85);
+      --bg-elevated: #111a2e;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #2563eb;
+      --accent-indigo: #6366f1;
+      --accent-purple: #a855f7;
+      --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+      --accent-glow: 0 0 35px rgba(56, 189, 248, 0.28);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(56, 189, 248, 0.4);
       --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-glow: rgba(56, 189, 248, 0.4);
+      --text-sub: #94a3b8;
+      --text-dim: #64748b;
     }
 
     * {
@@ -39,88 +41,182 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    h1, h2, h3, .brand-font {
+    h1, h2, h3, .font-heading {
       font-family: 'Outfit', sans-serif;
     }
 
+    .font-mono {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
     body {
-      background-color: var(--bg-main);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.1) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.5) 0px, transparent 100%);
-      background-attachment: fixed;
+      background-color: var(--bg-dark);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Header */
+    /* Ambient Background Aura Lights */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .aura-1 {
+      position: absolute;
+      top: -10%;
+      left: 15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+      filter: blur(80px);
+      border-radius: 50%;
+    }
+
+    .aura-2 {
+      position: absolute;
+      top: 40%;
+      right: -10%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+      filter: blur(90px);
+      border-radius: 50%;
+    }
+
+    .aura-3 {
+      position: absolute;
+      bottom: 5%;
+      left: -5%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, transparent 70%);
+      filter: blur(85px);
+      border-radius: 50%;
+    }
+
+    /* Glass Navbar */
     header {
       position: sticky;
       top: 0;
-      z-index: 90;
-      background: rgba(9, 13, 22, 0.8);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-color);
-      padding: 14px 20px;
+      z-index: 100;
+      background: rgba(5, 8, 17, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 12px 20px;
+      transition: all 0.3s;
     }
 
-    .header-inner {
-      max-width: 1000px;
+    .nav-container {
+      max-width: 1050px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo-box {
+    .brand-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
       cursor: pointer;
     }
 
-    .logo-icon {
+    .brand-icon-wrap {
+      position: relative;
       width: 40px;
       height: 40px;
-      border-radius: 12px;
+      border-radius: 13px;
       background: var(--accent-gradient);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px var(--accent-glow);
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
+      padding: 1px;
     }
 
-    .logo-text h1 {
+    .brand-icon-inner {
+      width: 100%;
+      height: 100%;
+      background: #090e1a;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .brand-logo:hover .brand-icon-inner {
+      background: transparent;
+    }
+
+    .brand-info h1 {
       font-size: 1.15rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      background: var(--accent-gradient);
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .logo-text p {
+    .brand-info .live-status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
       font-size: 0.72rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
-    .header-actions {
+    .status-dot-ping {
+      position: relative;
+      display: flex;
+      height: 7px;
+      width: 7px;
+    }
+
+    .status-dot-ping span:first-child {
+      position: absolute;
+      display: inline-flex;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      background-color: #38bdf8;
+      opacity: 0.75;
+      animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .status-dot-ping span:last-child {
+      position: relative;
+      display: inline-flex;
+      border-radius: 50%;
+      height: 7px;
+      width: 7px;
+      background-color: #0284c7;
+    }
+
+    @keyframes ping {
+      75%, 100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .icon-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
       color: var(--text-main);
       width: 40px;
       height: 40px;
@@ -129,243 +225,314 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      backdrop-filter: blur(10px);
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .icon-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: var(--accent-primary);
+    .btn-icon:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
       transform: translateY(-2px);
     }
 
-    .icon-btn:active {
+    .btn-icon:active {
       transform: scale(0.95);
     }
 
-    /* Container */
-    .main-container {
-      max-width: 1000px;
+    /* Main Container */
+    .app-main {
+      position: relative;
+      z-index: 1;
+      max-width: 1050px;
       width: 100%;
       margin: 0 auto;
-      padding: 24px 16px 80px;
+      padding: 18px 16px 80px;
       flex: 1;
     }
 
-    /* Hero Banner */
-    .hero-banner {
+    /* Hero Section (Compact) */
+    .hero-box {
       text-align: center;
-      padding: 20px 10px 28px;
+      padding: 6px 10px 18px;
     }
 
-    .hero-badge {
+    .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--accent-primary);
-      font-size: 0.8rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      color: var(--accent-cyan);
+      font-size: 0.78rem;
       font-weight: 600;
       padding: 4px 14px;
       border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .hero-badge .pulse-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--accent-primary);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-primary);
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      margin-bottom: 10px;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
     }
 
     .hero-title {
-      font-size: 1.9rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 8px;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 80%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 500px;
+    .hero-desc {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      max-width: 520px;
       margin: 0 auto;
+      line-height: 1.5;
     }
 
-    /* Upload Zone */
-    .upload-section {
-      background: var(--bg-card);
-      border: 2px dashed rgba(56, 189, 248, 0.35);
-      border-radius: 24px;
-      padding: 32px 20px;
-      text-align: center;
+    /* Compact & Sleek Upload Card */
+    .upload-card-wrapper {
       position: relative;
-      cursor: pointer;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
-    .upload-section:hover, .upload-section.dragover {
-      border-color: var(--accent-primary);
-      background: var(--bg-card-hover);
-      box-shadow: 0 12px 35px var(--accent-glow);
-      transform: translateY(-2px);
+    .upload-card-glow {
+      position: absolute;
+      inset: -1px;
+      background: var(--accent-gradient);
+      border-radius: 22px;
+      opacity: 0.25;
+      filter: blur(10px);
+      transition: opacity 0.4s ease;
     }
 
-    .upload-illustration {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 16px;
+    .upload-card-wrapper:hover .upload-card-glow,
+    .upload-card-wrapper.dragover .upload-card-glow {
+      opacity: 0.55;
+      filter: blur(14px);
+    }
+
+    .upload-card {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: 20px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 16px 18px;
+      text-align: center;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .upload-card-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .upload-card-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 4px 10px;
+      }
+    }
+
+    .upload-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .upload-mini-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-primary);
+      color: var(--accent-cyan);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .upload-actions {
+    .upload-text-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: #fff;
+    }
+
+    .upload-text-box p {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .upload-btn-group {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
     }
 
-    .btn-main {
-      background: var(--accent-gradient);
-      color: #fff;
-      border: none;
-      padding: 13px 26px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 14px;
-      cursor: pointer;
+    @media (min-width: 640px) {
+      .upload-btn-group {
+        width: auto;
+      }
+    }
+
+    .upload-label-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      box-shadow: 0 6px 20px var(--accent-glow);
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 14px;
+      cursor: pointer;
+      user-select: none;
       transition: all 0.25s ease;
     }
 
-    .btn-main:hover {
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+    .btn-gallery {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+      flex: 1;
+    }
+
+    @media (min-width: 640px) {
+      .btn-gallery { flex: initial; }
+    }
+
+    .btn-gallery:hover {
+      box-shadow: 0 6px 24px rgba(56, 189, 248, 0.55);
       transform: translateY(-2px);
     }
 
-    .btn-main:active {
+    .btn-gallery:active {
       transform: scale(0.97);
     }
 
-    .btn-secondary {
+    .btn-camera {
       background: rgba(255, 255, 255, 0.07);
-      border: 1px solid var(--border-color);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--text-main);
-      padding: 13px 22px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border-radius: 14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.25s ease;
+      backdrop-filter: blur(12px);
+      flex: 1;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.2);
+    @media (min-width: 640px) {
+      .btn-camera { flex: initial; }
     }
 
-    input[type="file"] {
-      display: none;
+    .btn-camera:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(56, 189, 248, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-camera:active {
+      transform: scale(0.97);
+    }
+
+    /* Hidden native inputs with standard IDs */
+    .hidden-file-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
     }
 
     /* Upload Progress Box */
-    .progress-box {
+    .progress-container {
       display: none;
-      margin-top: 20px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 16px;
+      margin-top: 14px;
+      background: rgba(9, 14, 26, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      padding: 12px 16px;
       text-align: left;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
-    .progress-header {
+    .progress-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .progress-bar-bg {
-      height: 8px;
-      background: rgba(255, 255, 255, 0.1);
+    .progress-track {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 999px;
       overflow: hidden;
     }
 
-    .progress-bar-fill {
+    .progress-bar {
       height: 100%;
       width: 0%;
       background: var(--accent-gradient);
       border-radius: 999px;
-      transition: width 0.3s ease;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Gallery Header */
-    .gallery-top-bar {
+    /* Gallery Toolbar */
+    .gallery-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--card-border);
     }
 
-    .gallery-heading {
+    .gallery-title-wrap {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 10px;
     }
 
-    .gallery-heading h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
+    .gallery-title-wrap h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
-    .gallery-count-badge {
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-primary);
+    .badge-count {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
       font-size: 0.8rem;
       font-weight: 700;
       padding: 2px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
-    .btn-action-sm {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 8px 14px;
+    .btn-pill-action {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-sub);
+      padding: 7px 14px;
       font-size: 0.82rem;
       font-weight: 600;
-      border-radius: 10px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -373,9 +540,9 @@
       transition: all 0.2s;
     }
 
-    .btn-action-sm:hover {
+    .btn-pill-action:hover {
       background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+      color: #ffffff;
       border-color: rgba(255, 255, 255, 0.2);
     }
 
@@ -393,49 +560,55 @@
       }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 950px) {
       .gallery-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
       }
     }
 
-    .photo-card {
+    .card-photo {
       position: relative;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 1 / 1;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
+      background: var(--bg-elevated);
+      border: 1px solid var(--card-border);
       cursor: pointer;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInCard 0.4s ease forwards;
     }
 
-    .photo-card:hover {
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(12px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card-photo:hover {
       transform: translateY(-4px) scale(1.02);
-      border-color: var(--border-glow);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2);
     }
 
-    .photo-card img {
+    .card-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
-      background: #111827;
+      transition: transform 0.5s ease;
+      background: #090e1a;
     }
 
-    .photo-card:hover img {
-      transform: scale(1.06);
+    .card-photo:hover img {
+      transform: scale(1.08);
     }
 
-    .photo-overlay {
+    .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 100%);
-      opacity: 0.9;
+      background: linear-gradient(to top, rgba(5, 8, 17, 0.85) 0%, rgba(5, 8, 17, 0.2) 50%, transparent 100%);
+      opacity: 0.95;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -443,53 +616,94 @@
       transition: opacity 0.2s;
     }
 
-    .photo-time-tag {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.85);
+    .card-meta-row {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 4px;
     }
 
-    /* Empty and Loading States */
-    .state-box {
+    .card-badge-time {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 2px 7px;
+      border-radius: 7px;
+      backdrop-filter: blur(6px);
+    }
+
+    .card-badge-new {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card-quick-zoom {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.2s;
+    }
+
+    .card-photo:hover .card-quick-zoom {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* States (Loading & Empty) */
+    .empty-state-box {
       grid-column: 1 / -1;
       text-align: center;
       padding: 60px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      backdrop-filter: blur(16px);
     }
 
-    .spinner {
-      width: 36px;
-      height: 36px;
+    .spinner-ring {
+      width: 38px;
+      height: 38px;
       border: 3px solid rgba(56, 189, 248, 0.2);
       border-radius: 50%;
-      border-top-color: var(--accent-primary);
+      border-top-color: var(--accent-cyan);
       animation: spin 0.8s linear infinite;
-      margin: 0 auto 16px;
+      margin: 0 auto 14px;
     }
 
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
 
-    /* Modal / Lightbox */
+    /* Lightbox Modal */
     .lightbox-modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(5, 8, 15, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(4, 7, 15, 0.96);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
       z-index: 999;
       flex-direction: column;
       justify-content: space-between;
       padding: 16px;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .lightbox-modal.active {
@@ -497,28 +711,28 @@
       opacity: 1;
     }
 
-    .lightbox-top {
+    .lightbox-nav-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
-    .lightbox-body {
+    .lightbox-viewport {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       width: 100%;
-      padding: 10px 0;
+      padding: 8px 0;
     }
 
-    .lightbox-img-wrapper {
+    .lightbox-img-box {
       max-width: 100%;
       max-height: 72vh;
       display: flex;
@@ -526,21 +740,21 @@
       justify-content: center;
     }
 
-    .lightbox-img-wrapper img {
+    .lightbox-img-box img {
       max-width: 100%;
       max-height: 72vh;
-      border-radius: 16px;
+      border-radius: 18px;
       object-fit: contain;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
-    .nav-btn {
+    .nav-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid var(--border-color);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: #ffffff;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -548,20 +762,20 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       transition: all 0.2s;
     }
 
-    .nav-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.2);
       transform: translateY(-50%) scale(1.1);
     }
 
-    .nav-prev { left: 10px; }
-    .nav-next { right: 10px; }
+    .arrow-left { left: 8px; }
+    .arrow-right { right: 8px; }
 
-    .lightbox-bottom {
-      max-width: 900px;
+    .lightbox-actions-footer {
+      max-width: 950px;
       width: 100%;
       margin: 0 auto;
       display: flex;
@@ -570,13 +784,13 @@
       padding-top: 10px;
     }
 
-    /* QR Code Modal */
+    /* QR Code Card Modal */
     .qr-modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(18px);
       z-index: 1000;
       align-items: center;
       justify-content: center;
@@ -587,72 +801,97 @@
       display: flex;
     }
 
-    .qr-card {
-      background: #131b2e;
-      border: 1px solid var(--border-color);
-      border-radius: 28px;
-      padding: 30px 24px;
+    .qr-card-vip {
+      position: relative;
+      background: linear-gradient(145deg, #0d162a, #070c17);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 30px;
+      padding: 30px 22px;
       text-align: center;
       max-width: 380px;
       width: 100%;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 35px rgba(56, 189, 248, 0.18);
     }
 
-    .qr-canvas-box {
+    .qr-frame {
       background: #ffffff;
-      padding: 16px;
+      padding: 14px;
       border-radius: 20px;
       display: inline-block;
       margin: 18px 0;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
-    /* Toast Notification */
-    .toast {
+    .qr-frame img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* Toast */
+    .toast-pill {
       position: fixed;
-      bottom: 24px;
+      bottom: 28px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: rgba(19, 27, 46, 0.95);
-      border: 1px solid var(--accent-primary);
-      color: #fff;
-      padding: 12px 24px;
+      background: rgba(13, 22, 42, 0.95);
+      border: 1px solid var(--accent-cyan);
+      color: #ffffff;
+      padding: 12px 26px;
       border-radius: 999px;
       font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      font-weight: 600;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(56, 189, 248, 0.3);
       z-index: 9999;
-      backdrop-filter: blur(12px);
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(16px);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .toast.show {
+    .toast-pill.show {
       transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <!-- App Header -->
+  <!-- Ambient Lighting Effects -->
+  <div class="bg-mesh">
+    <div class="aura-1"></div>
+    <div class="aura-2"></div>
+    <div class="aura-3"></div>
+  </div>
+
+  <!-- Navbar -->
   <header>
-    <div class="header-inner">
-      <div class="logo-box" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <div class="logo-icon">
-          <i data-lucide="camera" style="color: #fff; width: 22px; height: 22px;"></i>
+    <div class="nav-container">
+      <div class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="brand-icon-wrap">
+          <div class="brand-icon-inner">
+            <i data-lucide="camera" style="color: #38bdf8; width: 20px; height: 20px;"></i>
+          </div>
         </div>
-        <div class="logo-text">
+        <div class="brand-info">
           <h1>Moments Gallery</h1>
-          <p>Live Drive Sync</p>
+          <div class="live-status">
+            <div class="status-dot-ping">
+              <span></span>
+              <span></span>
+            </div>
+            <span>Google Drive Connected</span>
+          </div>
         </div>
       </div>
-      <div class="header-actions">
-        <button class="icon-btn" onclick="openQrModal()" title="QR Code দেখুন">
+
+      <div class="nav-actions">
+        <button class="btn-icon" onclick="openQrModal()" title="QR Code দেখুন">
           <i data-lucide="qr-code" style="width: 20px; height: 20px;"></i>
         </button>
-        <button class="icon-btn" onclick="loadGallery(true)" title="গ্যালারি রিফ্রেশ করুন">
+        <button class="btn-icon" onclick="loadGallery(true)" title="গ্যালারি রিফ্রেশ করুন">
           <i data-lucide="refresh-cw" id="refresh-icon" style="width: 20px; height: 20px;"></i>
         </button>
       </div>
@@ -660,76 +899,82 @@
   </header>
 
   <!-- Main Content -->
-  <main class="main-container">
-    
+  <main class="app-main">
+
     <!-- Hero Header -->
-    <div class="hero-banner">
-      <div class="hero-badge">
-        <span class="pulse-dot"></span>
-        <span>Google Drive লাইভ সংযুক্ত</span>
+    <section class="hero-box">
+      <div class="badge-pill">
+        <i data-lucide="sparkles" style="width: 13px; height: 13px;"></i>
+        <span>লাইভ মেমোরিজ পোর্টাল</span>
       </div>
-      <h2 class="hero-title">ইভেন্টের মুহূর্তগুলো শেয়ার করুন 📸</h2>
-      <p class="hero-subtitle">আপনার তোলা সুন্দর স্মৃতিগুলো আপলোড করুন এবং অন্যদের শেয়ার করা সব ছবি একসাথে দেখুন।</p>
-    </div>
+      <h2 class="hero-title">ইভেন্টের মুহূর্তগুলো শেয়ার করুন ✨</h2>
+      <p class="hero-desc">আপনার ছবিগুলো ড্রাইভে আপলোড করুন এবং সবার শেয়ার করা মুহূর্তগুলো একসাথে উপভোগ করুন।</p>
+    </section>
 
-    <!-- Upload Zone Card -->
-    <section class="upload-section" id="drop-zone" onclick="document.getElementById('file-picker').click()">
-      <div class="upload-illustration">
-        <i data-lucide="cloud-upload" style="width: 34px; height: 34px;"></i>
-      </div>
-      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 6px;">ছবি আপলোড করুন</h3>
-      <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 400px; margin: 0 auto;">
-        মোবাইল গ্যালারি বা ক্যামেরা দিয়ে সরাসরি ছবি সিলেক্ট করুন
-      </p>
+    <!-- Compact Upload Card with Native Labels for 100% Reliable Camera/Gallery Trigger -->
+    <section class="upload-card-wrapper" id="drop-zone-wrapper">
+      <div class="upload-card-glow"></div>
+      <div class="upload-card" id="drop-zone">
+        <div class="upload-card-inner">
+          <div class="upload-header-left">
+            <div class="upload-mini-icon">
+              <i data-lucide="cloud-upload" style="width: 22px; height: 22px;"></i>
+            </div>
+            <div class="upload-text-box">
+              <h3>ছবি আপলোড করুন</h3>
+              <p>গ্যালারি অথবা সরাসরি ক্যামেরা থেকে নিন</p>
+            </div>
+          </div>
 
-      <div class="upload-actions" onclick="event.stopPropagation()">
-        <!-- Standard File / Gallery Button -->
-        <button class="btn-main" type="button" onclick="document.getElementById('file-picker').click()">
-          <i data-lucide="image-plus" style="width: 18px; height: 18px;"></i>
-          <span>গ্যালারি থেকে নিন</span>
-        </button>
+          <div class="upload-btn-group">
+            <!-- Native Accessible Labels directly linked to Inputs -->
+            <label for="file-picker" class="upload-label-btn btn-gallery">
+              <i data-lucide="images" style="width: 17px; height: 17px;"></i>
+              <span>গ্যালারি ব্রাউজ</span>
+            </label>
 
-        <!-- Direct Camera Capture Button (For Mobile) -->
-        <button class="btn-secondary" type="button" onclick="document.getElementById('camera-picker').click()">
-          <i data-lucide="camera" style="width: 18px; height: 18px;"></i>
-          <span>ক্যামেরা ওপেন</span>
-        </button>
-      </div>
-
-      <!-- Hidden Inputs -->
-      <input type="file" id="file-picker" accept="image/*" multiple onchange="handleFiles(event.target.files)">
-      <input type="file" id="camera-picker" accept="image/*" capture="environment" onchange="handleFiles(event.target.files)">
-
-      <!-- Real-time Progress Bar -->
-      <div class="progress-box" id="progress-box">
-        <div class="progress-header">
-          <span id="progress-status-text">আপলোড হচ্ছে...</span>
-          <span id="progress-percent-text">0%</span>
+            <label for="camera-picker" class="upload-label-btn btn-camera">
+              <i data-lucide="camera" style="width: 17px; height: 17px; color: #38bdf8;"></i>
+              <span>ক্যামেরা ওপেন</span>
+            </label>
+          </div>
         </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+
+        <!-- Hidden Native File Inputs -->
+        <input type="file" id="file-picker" class="hidden-file-input" accept="image/*" multiple onchange="handleFiles(this.files)">
+        <input type="file" id="camera-picker" class="hidden-file-input" accept="image/*" capture="environment" onchange="handleFiles(this.files)">
+
+        <!-- Progress Box -->
+        <div class="progress-container" id="progress-container">
+          <div class="progress-meta">
+            <span id="progress-status-text" style="color: #38bdf8;">ড্রাইভে আপলোড হচ্ছে...</span>
+            <span id="progress-percent-text" class="font-mono" style="color: #fff;">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" id="progress-bar-fill"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Gallery Section -->
     <section>
-      <div class="gallery-top-bar">
-        <div class="gallery-heading">
+      <div class="gallery-toolbar">
+        <div class="gallery-title-wrap">
           <h2>শেয়ার করা ছবিসমূহ</h2>
-          <span class="gallery-count-badge" id="photo-count">0</span>
+          <span class="badge-count font-mono" id="photo-count">0</span>
         </div>
-        <button class="btn-action-sm" onclick="loadGallery(true)">
-          <i data-lucide="rotate-ccw" style="width: 14px; height: 14px;"></i>
+        <button class="btn-pill-action" onclick="loadGallery(true)">
+          <i data-lucide="rotate-cw" style="width: 14px; height: 14px;"></i>
           <span>রিফ্রেশ</span>
         </button>
       </div>
 
-      <!-- Photo Grid -->
+      <!-- Photos Grid -->
       <div class="gallery-grid" id="gallery-grid">
-        <div class="state-box">
-          <div class="spinner"></div>
-          <p style="color: var(--text-muted);">গ্যালারির ছবি লোড হচ্ছে...</p>
+        <div class="empty-state-box">
+          <div class="spinner-ring"></div>
+          <p style="color: var(--text-sub); font-size: 0.92rem;">গ্যালারির ছবি লোড হচ্ছে...</p>
         </div>
       </div>
     </section>
@@ -738,64 +983,66 @@
 
   <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="lightbox">
-    <div class="lightbox-top">
-      <span style="font-size: 0.85rem; color: var(--text-muted);" id="lightbox-counter">1 / 1</span>
-      <button class="icon-btn" onclick="closeLightbox()">
+    <div class="lightbox-nav-header">
+      <span class="font-mono" style="font-size: 0.9rem; color: var(--text-sub);" id="lightbox-counter">1 / 1</span>
+      <button class="btn-icon" onclick="closeLightbox()">
         <i data-lucide="x" style="width: 22px; height: 22px;"></i>
       </button>
     </div>
 
-    <div class="lightbox-body">
-      <button class="nav-btn nav-prev" onclick="prevPhoto(event)">
-        <i data-lucide="chevron-left" style="width: 24px; height: 24px;"></i>
+    <div class="lightbox-viewport">
+      <button class="nav-arrow arrow-left" onclick="prevPhoto(event)">
+        <i data-lucide="chevron-left" style="width: 26px; height: 26px;"></i>
       </button>
 
-      <div class="lightbox-img-wrapper">
-        <img id="lightbox-img" src="" alt="Moment">
+      <div class="lightbox-img-box">
+        <img id="lightbox-img" src="" alt="Photo Full View">
       </div>
 
-      <button class="nav-btn nav-next" onclick="nextPhoto(event)">
-        <i data-lucide="chevron-right" style="width: 24px; height: 24px;"></i>
+      <button class="nav-arrow arrow-right" onclick="nextPhoto(event)">
+        <i data-lucide="chevron-right" style="width: 26px; height: 26px;"></i>
       </button>
     </div>
 
-    <div class="lightbox-bottom">
-      <a id="lightbox-download-btn" class="btn-main" href="#" target="_blank" download>
-        <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+    <div class="lightbox-actions-footer">
+      <a id="lightbox-download-btn" class="upload-label-btn btn-gallery" style="text-decoration: none;" href="#" target="_blank" download>
+        <i data-lucide="download" style="width: 17px; height: 17px;"></i>
         <span>ডাউনলোড করুন</span>
       </a>
-      <button class="btn-secondary" onclick="shareCurrentPhoto()">
-        <i data-lucide="share-2" style="width: 18px; height: 18px;"></i>
+      <button class="upload-label-btn btn-camera" style="cursor: pointer;" onclick="shareCurrentPhoto()">
+        <i data-lucide="share-2" style="width: 17px; height: 17px;"></i>
         <span>শেয়ার</span>
       </button>
     </div>
   </div>
 
-  <!-- QR Code Modal -->
+  <!-- VIP QR Code Modal -->
   <div class="qr-modal" id="qr-modal" onclick="closeQrModal(event)">
-    <div class="qr-card" onclick="event.stopPropagation()">
+    <div class="qr-card-vip" onclick="event.stopPropagation()">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <h3 style="font-size: 1.2rem; font-weight: 700;">QR কোড স্ক্যান করুন</h3>
-        <button class="icon-btn" onclick="closeQrModal(null)" style="width: 32px; height: 32px;">
-          <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+        <h3 style="font-size: 1.2rem; font-weight: 800;">QR কোড স্ক্যান করুন</h3>
+        <button class="btn-icon" onclick="closeQrModal(null)" style="width: 32px; height: 32px; border-radius: 10px;">
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
         </button>
       </div>
-      <p style="font-size: 0.85rem; color: var(--text-muted);">
+      <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5;">
         যেকেউ এই QR কোডটি স্ক্যান করে যেকোনো ফোন থেকে ফটো আপলোড ও দেখতে পারবেন।
       </p>
       
-      <div class="qr-canvas-box" id="qrcode-container"></div>
+      <div class="qr-frame">
+        <img src="qr-code.png" alt="QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(window.location.href)">
+      </div>
       
-      <button class="btn-main" style="width: 100%; justify-content: center;" onclick="copyPageLink()">
-        <i data-lucide="copy" style="width: 18px; height: 18px;"></i>
+      <button class="upload-label-btn btn-gallery" style="width: 100%; border-radius: 14px;" onclick="copyPageLink()">
+        <i data-lucide="copy" style="width: 17px; height: 17px;"></i>
         <span>ওয়েবসাইটের লিঙ্ক কপি করুন</span>
       </button>
     </div>
   </div>
 
   <!-- Toast Notification -->
-  <div class="toast" id="toast">
-    <i data-lucide="check-circle" style="width: 18px; height: 18px; color: #38bdf8;"></i>
+  <div class="toast-pill" id="toast">
+    <i data-lucide="check-circle-2" style="width: 18px; height: 18px; color: #38bdf8;"></i>
     <span id="toast-msg">সফল হয়েছে</span>
   </div>
 
@@ -812,10 +1059,9 @@
       lucide.createIcons();
       loadGallery();
       setupDragAndDrop();
-      generateQrCode();
     });
 
-    // 🔄 Fetch Photos from Google Drive API
+    // 🔄 Fetch Photos from Google Drive API - Strict Newest First Sort
     async function loadGallery(manual = false) {
       const grid = document.getElementById('gallery-grid');
       const refreshIcon = document.getElementById('refresh-icon');
@@ -829,34 +1075,19 @@
         const data = await response.json();
 
         if (data.success) {
-          currentPhotos = data.photos || [];
-          document.getElementById('photo-count').innerText = currentPhotos.length;
+          let fetched = data.photos || [];
+          
+          fetched.sort((a, b) => {
+            const timeA = a.timestamp || 0;
+            const timeB = b.timestamp || 0;
+            return timeB - timeA;
+          });
 
-          if (currentPhotos.length === 0) {
-            grid.innerHTML = `
-              <div class="state-box">
-                <i data-lucide="images" style="width: 48px; height: 48px; color: var(--text-muted); margin: 0 auto 12px;"></i>
-                <h4 style="font-size: 1.1rem; margin-bottom: 4px;">এখনো কোনো ছবি নেই</h4>
-                <p style="color: var(--text-muted); font-size: 0.88rem;">প্রথম ছবিটি আপলোড করে গ্যালারি শুরু করুন! ✨</p>
-              </div>
-            `;
-          } else {
-            grid.innerHTML = currentPhotos.map((photo, idx) => `
-              <div class="photo-card" onclick="openLightbox(${idx})">
-                <img src="${photo.thumbnail}" loading="lazy" alt="${photo.name}" onerror="this.src='https://placehold.co/400x400/1e293b/white?text=Photo'">
-                <div class="photo-overlay">
-                  <div class="photo-time-tag">
-                    <i data-lucide="clock" style="width: 12px; height: 12px;"></i>
-                    <span>${photo.date}</span>
-                  </div>
-                </div>
-              </div>
-            `).join('');
-          }
-          lucide.createIcons();
+          currentPhotos = fetched;
+          renderGallery();
         } else {
           grid.innerHTML = `
-            <div class="state-box">
+            <div class="empty-state-box">
               <p style="color: #ef4444;">ছবি লোড করা সম্ভব হয়নি: ${data.error || 'Unknown Error'}</p>
             </div>
           `;
@@ -864,7 +1095,7 @@
       } catch (err) {
         console.error('Gallery Load Error:', err);
         grid.innerHTML = `
-          <div class="state-box">
+          <div class="empty-state-box">
             <p style="color: #ef4444;">নেটওয়ার্ক সমস্যা। দয়া করে রিফ্রেশ বাটনে ক্লিক করুন।</p>
           </div>
         `;
@@ -873,12 +1104,47 @@
       }
     }
 
-    // 📤 Handle Multi-File Upload & Compression
+    // 🎨 Render Grid with Newest Images at Top
+    function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      document.getElementById('photo-count').innerText = currentPhotos.length;
+
+      if (currentPhotos.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state-box">
+            <i data-lucide="images" style="width: 48px; height: 48px; color: var(--text-dim); margin: 0 auto 12px;"></i>
+            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">এখনো কোনো ছবি নেই</h4>
+            <p style="color: var(--text-sub); font-size: 0.88rem;">প্রথম ছবিটি আপলোড করে গ্যালারি শুরু করুন! ✨</p>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = currentPhotos.map((photo, idx) => `
+          <div class="card-photo" onclick="openLightbox(${idx})">
+            <img src="${photo.thumbnail}" loading="lazy" alt="${photo.name}" onerror="this.src='https://placehold.co/400x400/111a2e/white?text=Photo'">
+            <div class="card-overlay">
+              <div class="card-meta-row">
+                <span class="card-badge-time">
+                  <i data-lucide="clock" style="width: 11px; height: 11px;"></i>
+                  <span>${photo.date || 'সম্প্রতি'}</span>
+                </span>
+                ${idx === 0 ? '<span class="card-badge-new">নতুন</span>' : ''}
+                <span class="card-quick-zoom">
+                  <i data-lucide="maximize-2" style="width: 13px; height: 13px;"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+      lucide.createIcons();
+    }
+
+    // 📤 Handle Multi-File Upload & Client-side Compression
     async function handleFiles(files) {
       if (!files || files.length === 0 || isUploading) return;
       isUploading = true;
 
-      const progressBox = document.getElementById('progress-box');
+      const progressBox = document.getElementById('progress-container');
       const progressStatus = document.getElementById('progress-status-text');
       const progressPercent = document.getElementById('progress-percent-text');
       const progressFill = document.getElementById('progress-bar-fill');
@@ -886,20 +1152,19 @@
       progressBox.style.display = 'block';
       let uploadedCount = 0;
       const totalFiles = files.length;
+      const newItems = [];
 
       for (let i = 0; i < totalFiles; i++) {
         const file = files[i];
         const percent = Math.round((i / totalFiles) * 100);
         progressPercent.innerText = `${percent}%`;
         progressFill.style.width = `${percent}%`;
-        progressStatus.innerText = `ড্রাইভে প্রসেস হচ্ছে (${i + 1}/${totalFiles}): ${file.name.substring(0, 16)}...`;
+        progressStatus.innerText = `ড্রাইভে প্রসেস হচ্ছে (${i + 1}/${totalFiles}): ${file.name.substring(0, 15)}...`;
 
         try {
-          // Client-side image resize & compression
           const base64Data = await resizeAndCompressImage(file);
           
-          // Post to Google Apps Script
-          await fetch(SCRIPT_URL, {
+          const uploadRes = await fetch(SCRIPT_URL, {
             method: 'POST',
             body: JSON.stringify({
               action: 'upload',
@@ -908,31 +1173,48 @@
             })
           });
 
+          const resData = await uploadRes.json();
+          if (resData && resData.success) {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            newItems.unshift({
+              id: resData.id,
+              name: resData.name,
+              timestamp: Date.now() + i,
+              date: timeStr,
+              thumbnail: resData.viewUrl || base64Data,
+              fullUrl: resData.viewUrl || base64Data
+            });
+          }
+
           uploadedCount++;
         } catch (error) {
           console.error('Upload Failed for:', file.name, error);
         }
       }
 
-      // Complete
+      if (newItems.length > 0) {
+        currentPhotos = [...newItems, ...currentPhotos];
+        renderGallery();
+      }
+
       progressFill.style.width = '100%';
       progressPercent.innerText = '100%';
       progressStatus.innerText = `✅ ${uploadedCount} টি ছবি ড্রাইভে সেভ হয়েছে!`;
       
-      showToast(`${uploadedCount} টি ছবি সফলভাবে আপলোড হয়েছে! 🎉`);
+      showToast(`${uploadedCount} টি ছবি সফলভাবে সবার উপরে যোগ হয়েছে! 🎉`);
 
       setTimeout(() => {
         progressBox.style.display = 'none';
         progressFill.style.width = '0%';
         isUploading = false;
-        // Clear file inputs
         document.getElementById('file-picker').value = '';
         document.getElementById('camera-picker').value = '';
-        loadGallery();
-      }, 2500);
+      }, 2000);
     }
 
-    // 🖼️ Smart Image Resize & Compression with Canvas
+    // 🖼️ Smart Image Resize & Compression
     function resizeAndCompressImage(file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -963,7 +1245,6 @@
             const ctx = canvas.getContext('2d');
             ctx.drawImage(img, 0, 0, width, height);
 
-            // Compress as JPEG with 0.82 quality
             const base64 = canvas.toDataURL('image/jpeg', 0.82);
             resolve(base64);
           };
@@ -1015,7 +1296,6 @@
       updateLightboxContent();
     }
 
-    // Keyboard support for Lightbox
     window.addEventListener('keydown', (e) => {
       const modal = document.getElementById('lightbox');
       if (modal.classList.contains('active')) {
@@ -1032,7 +1312,7 @@
         try {
           await navigator.share({
             title: 'Event Moment',
-            text: 'এই চমৎকার ছবিটি দেখুন!',
+            text: 'এই চমৎকার স্মৃতিটি দেখুন!',
             url: photo.fullUrl
           });
         } catch (err) {
@@ -1044,21 +1324,7 @@
       }
     }
 
-    // 📱 QR Code Generator
-    function generateQrCode() {
-      const container = document.getElementById('qrcode-container');
-      container.innerHTML = '';
-      const currentUrl = window.location.href;
-      new QRCode(container, {
-        text: currentUrl,
-        width: 190,
-        height: 190,
-        colorDark: "#090d16",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-      });
-    }
-
+    // 📱 Modal Handlers
     function openQrModal() {
       document.getElementById('qr-modal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -1093,12 +1359,13 @@
 
     // 📂 Drag and Drop Setup
     function setupDragAndDrop() {
+      const dropZoneWrapper = document.getElementById('drop-zone-wrapper');
       const dropZone = document.getElementById('drop-zone');
       ['dragenter', 'dragover'].forEach(name => {
         dropZone.addEventListener(name, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.classList.add('dragover');
+          dropZoneWrapper.classList.add('dragover');
         });
       });
 
@@ -1106,7 +1373,7 @@
         dropZone.addEventListener(name, (e) => {
           e.preventDefault();
           e.stopPropagation();
-          dropZone.classList.remove('dragover');
+          dropZoneWrapper.classList.remove('dragover');
         });
       });
 
