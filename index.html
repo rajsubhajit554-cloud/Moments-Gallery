@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Moments Gallery | Live Shared Memories</title>
-  <meta name="referrer" content="no-referrer">
   <meta name="description" content="লাইভ ফটো আপলোড এবং শেয়ারড ক্লাউড গ্যালারি - গুগল ড্রাইভ সরাসরি সিঙ্কড">
 
   <!-- Premium Google Fonts -->
@@ -649,161 +648,6 @@
       line-height: 1;
     }
 
-    /* ❤️ Card Like Button & Badge */
-    .card-like-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #f1f5f9;
-      padding: 1px 4px;
-      border-radius: 3px;
-      font-size: 0.52rem;
-      font-weight: 700;
-      cursor: pointer;
-      line-height: 1;
-      backdrop-filter: blur(6px);
-      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      user-select: none;
-    }
-
-    .card-like-btn:hover {
-      background: rgba(244, 63, 94, 0.35);
-      border-color: rgba(244, 63, 94, 0.8);
-      transform: scale(1.1);
-    }
-
-    .card-like-btn:active {
-      transform: scale(0.88);
-    }
-
-    .card-like-btn.liked {
-      background: linear-gradient(135deg, #f43f5e, #e11d48);
-      border-color: #f43f5e;
-      color: #ffffff;
-      box-shadow: 0 0 10px rgba(244, 63, 94, 0.6);
-    }
-
-    .card-like-btn.liked .like-svg {
-      fill: #ffffff;
-      stroke: #ffffff;
-    }
-
-    .like-svg {
-      width: 9px;
-      height: 9px;
-      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .card-like-btn:hover .like-svg {
-      transform: scale(1.25);
-    }
-
-    /* 💖 Double Tap & Click Heart Burst Animation */
-    .heart-burst-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    .heart-burst-anim {
-      width: 46px;
-      height: 46px;
-      color: #f43f5e;
-      fill: #f43f5e;
-      filter: drop-shadow(0 0 18px rgba(244, 63, 94, 0.9));
-      animation: heartBurst 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-
-    @keyframes heartBurst {
-      0% { transform: scale(0); opacity: 0; }
-      45% { transform: scale(1.35); opacity: 1; }
-      70% { transform: scale(1.1); opacity: 0.95; }
-      100% { transform: scale(1.7); opacity: 0; }
-    }
-
-    /* 🌟 Filter Tabs */
-    .filter-tabs {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      overflow-x: auto;
-      padding-bottom: 2px;
-      scrollbar-width: none;
-    }
-
-    .filter-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .filter-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px 10px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--card-border);
-      color: var(--text-sub);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .filter-pill:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-    }
-
-    .filter-pill.active {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(99, 102, 241, 0.22));
-      border-color: var(--accent-cyan);
-      color: #38bdf8;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
-    }
-
-    .filter-pill.active.pill-liked {
-      background: linear-gradient(135deg, rgba(244, 63, 94, 0.22), rgba(225, 29, 72, 0.22));
-      border-color: #f43f5e;
-      color: #fb7185;
-      box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
-    }
-
-    /* 💖 Lightbox Like Button */
-    .btn-like {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: var(--text-main);
-      backdrop-filter: blur(12px);
-      cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .btn-like:hover {
-      background: rgba(244, 63, 94, 0.2);
-      border-color: rgba(244, 63, 94, 0.6);
-      transform: translateY(-2px);
-    }
-
-    .btn-like.liked {
-      background: linear-gradient(135deg, #f43f5e, #e11d48);
-      border-color: #f43f5e;
-      color: #ffffff;
-      box-shadow: 0 4px 18px rgba(244, 63, 94, 0.45);
-    }
-
-    .btn-like.liked svg {
-      fill: #ffffff;
-      stroke: #ffffff;
-    }
-
     /* States (Loading & Empty) */
     .empty-state-box {
       grid-column: 1 / -1;
@@ -1100,26 +944,13 @@
           <h2>শেয়ার করা ছবিসমূহ</h2>
           <span class="badge-count font-mono" id="photo-count">0</span>
         </div>
-
-        <div class="filter-tabs">
-          <button class="filter-pill active" id="filter-all" onclick="setFilter('all')">
-            <span>সব ছবি</span>
-          </button>
-          <button class="filter-pill pill-liked" id="filter-top" onclick="setFilter('top')">
-            <span>🔥 সেরা লাইকড</span>
-          </button>
-          <button class="filter-pill" id="filter-newest" onclick="setFilter('newest')">
-            <span>⚡ নতুন</span>
-          </button>
-        </div>
-
-        <button class="btn-pill-action" onclick="loadGallery(true)" title="ছবি ও লাইক রিফ্রেশ করুন">
-          <i data-lucide="rotate-cw" id="refresh-icon" style="width: 13px; height: 13px;"></i>
+        <button class="btn-pill-action" onclick="loadGallery(true)">
+          <i data-lucide="rotate-cw" style="width: 13px; height: 13px;"></i>
           <span>রিফ্রেশ</span>
         </button>
       </div>
 
-      <!-- Photos Grid (Native Smartphone Gallery Grid) -->
+      <!-- Photos Grid (Native 3-Column Smartphone Gallery Grid) -->
       <div class="gallery-grid" id="gallery-grid">
         <div class="empty-state-box">
           <div class="spinner-ring"></div>
@@ -1144,13 +975,8 @@
         <i data-lucide="chevron-left" style="width: 24px; height: 24px;"></i>
       </button>
 
-      <div class="lightbox-img-box" id="lightbox-img-box" ondblclick="handleLightboxDblClick(event)">
+      <div class="lightbox-img-box">
         <img id="lightbox-img" src="" alt="Photo Full View">
-        <div id="lightbox-heart-burst" class="heart-burst-overlay" style="display: none;">
-          <svg class="heart-burst-anim" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-          </svg>
-        </div>
       </div>
 
       <button class="nav-arrow arrow-right" onclick="nextPhoto(event)">
@@ -1159,17 +985,10 @@
     </div>
 
     <div class="lightbox-actions-footer">
-      <button id="lightbox-like-btn" class="upload-label-btn btn-like" onclick="toggleLikeLightbox(event)" title="লাইক দিন">
-        <i data-lucide="heart" id="lightbox-like-icon" style="width: 15px; height: 15px;"></i>
-        <span id="lightbox-like-text">লাইক</span>
-        <span id="lightbox-like-count" class="font-mono" style="margin-left: 2px; font-weight: 800;">0</span>
-      </button>
-
       <a id="lightbox-download-btn" class="upload-label-btn btn-gallery" style="text-decoration: none;" href="#" target="_blank" download>
         <i data-lucide="download" style="width: 15px; height: 15px;"></i>
-        <span>ডাউনলোড</span>
+        <span>ডাউনলোড করুন</span>
       </a>
-
       <button class="upload-label-btn btn-camera" style="cursor: pointer;" onclick="shareCurrentPhoto()">
         <i data-lucide="share-2" style="width: 15px; height: 15px;"></i>
         <span>শেয়ার</span>
@@ -1214,22 +1033,6 @@
     let currentPhotos = [];
     let currentPhotoIndex = 0;
     let isUploading = false;
-    let currentFilter = 'all'; // 'all', 'top', 'newest'
-
-    // 💖 Local Storage for User's Liked Status & Global Likes Cache
-    let userLikedPhotos = {};
-    try {
-      userLikedPhotos = JSON.parse(localStorage.getItem('moments_liked_photos') || '{}');
-    } catch (e) {
-      userLikedPhotos = {};
-    }
-
-    let globalLikesCache = {};
-    try {
-      globalLikesCache = JSON.parse(localStorage.getItem('moments_global_likes') || '{}');
-    } catch (e) {
-      globalLikesCache = {};
-    }
 
     // Initialization
     window.addEventListener('DOMContentLoaded', () => {
@@ -1238,7 +1041,7 @@
       setupDragAndDrop();
     });
 
-    // 🔄 Fetch Photos from Google Drive API & Likes
+    // 🔄 Fetch Photos from Google Drive API - Strict Newest First Sort
     async function loadGallery(manual = false) {
       const grid = document.getElementById('gallery-grid');
       const refreshIcon = document.getElementById('refresh-icon');
@@ -1253,22 +1056,13 @@
 
         if (data.success) {
           let fetched = data.photos || [];
-
-          // সার্ভার থেকে আসা লাইক অথবা লোকাল ক্যাশ লাইক মার্জ করা
-          if (data.allLikes) {
-            globalLikesCache = Object.assign({}, globalLikesCache, data.allLikes);
-            localStorage.setItem('moments_global_likes', JSON.stringify(globalLikesCache));
-          }
-
-          fetched.forEach(photo => {
-            if (photo.id && (photo.likes === undefined || photo.likes === null)) {
-              photo.likes = globalLikesCache[photo.id] || 0;
-            } else if (photo.id && typeof photo.likes === 'number') {
-              globalLikesCache[photo.id] = photo.likes;
-            }
+          
+          fetched.sort((a, b) => {
+            const timeA = a.timestamp || 0;
+            const timeB = b.timestamp || 0;
+            return timeB - timeA;
           });
 
-          localStorage.setItem('moments_global_likes', JSON.stringify(globalLikesCache));
           currentPhotos = fetched;
           renderGallery();
         } else {
@@ -1290,52 +1084,12 @@
       }
     }
 
-    // 🛡️ Multi-Fallback Google Drive Image Loader
-    function handleImgError(img, fileId) {
-      if (!img.dataset.retries) img.dataset.retries = '0';
-      let retries = parseInt(img.dataset.retries, 10);
-      if (retries === 0 && fileId && !fileId.startsWith('temp_')) {
-        img.dataset.retries = '1';
-        img.src = `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
-      } else if (retries === 1 && fileId && !fileId.startsWith('temp_')) {
-        img.dataset.retries = '2';
-        img.src = `https://lh3.googleusercontent.com/u/0/d/${fileId}`;
-      } else if (retries === 2 && fileId && !fileId.startsWith('temp_')) {
-        img.dataset.retries = '3';
-        img.src = `https://drive.google.com/uc?export=view&id=${fileId}`;
-      } else {
-        img.src = 'https://placehold.co/400x400/111a2e/white?text=No+Preview';
-      }
-    }
-
-    // 🌟 Filter Management
-    function setFilter(filter) {
-      currentFilter = filter;
-      document.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = document.getElementById(`filter-${filter}`);
-      if (activeBtn) activeBtn.classList.add('active');
-      renderGallery();
-    }
-
-    function getDisplayPhotos() {
-      let list = [...currentPhotos];
-      if (currentFilter === 'top') {
-        list.sort((a, b) => (b.likes || 0) - (a.likes || 0));
-      } else {
-        // 'all' or 'newest'
-        list.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-      }
-      return list;
-    }
-
-    // 🎨 Render Grid with Smartphone Gallery 4-Column Layout & Likes
+    // 🎨 Render Grid with Smartphone Gallery 3-Column Layout
     function renderGallery() {
       const grid = document.getElementById('gallery-grid');
       document.getElementById('photo-count').innerText = currentPhotos.length;
 
-      const displayList = getDisplayPhotos();
-
-      if (displayList.length === 0) {
+      if (currentPhotos.length === 0) {
         grid.innerHTML = `
           <div class="empty-state-box">
             <i data-lucide="images" style="width: 44px; height: 44px; color: var(--text-dim); margin: 0 auto 10px;"></i>
@@ -1344,149 +1098,19 @@
           </div>
         `;
       } else {
-        grid.innerHTML = displayList.map((photo) => {
-          const originalIdx = currentPhotos.findIndex(p => p.id === photo.id);
-          const isLiked = !!userLikedPhotos[photo.id];
-          const likesCount = photo.likes || 0;
-
-          return `
-            <div class="card-photo" id="card-${photo.id}" onclick="openLightbox(${originalIdx})" ondblclick="handleCardDblClick(event, '${photo.id}')">
-              <img src="${photo.thumbnail}" loading="lazy" alt="${photo.name}" onerror="handleImgError(this, '${photo.id || ''}')">
-              
-              <!-- Heart Burst Container -->
-              <div id="burst-${photo.id}" class="heart-burst-overlay" style="display: none;">
-                <svg class="heart-burst-anim" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                </svg>
-              </div>
-
-              <div class="card-overlay">
-                <div class="card-meta-row">
-                  <div style="display: flex; align-items: center; gap: 2px;">
-                    <span class="card-badge-time">${photo.date || 'সম্প্রতি'}</span>
-                    ${photo.isSyncing ? '<span class="card-badge-syncing">সিঙ্ক...</span>' : (originalIdx === 0 && currentFilter !== 'top' ? '<span class="card-badge-new">NEW</span>' : '')}
-                  </div>
-                  
-                  <!-- Like Button on Photo Card -->
-                  <button class="card-like-btn ${isLiked ? 'liked' : ''}" onclick="handleCardLikeClick(event, '${photo.id}')" title="${isLiked ? 'লাইক তুলে নিন' : 'লাইক দিন'}">
-                    <svg class="like-svg" viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                    </svg>
-                    <span class="like-count font-mono" id="like-count-${photo.id}">${likesCount}</span>
-                  </button>
-                </div>
+        grid.innerHTML = currentPhotos.map((photo, idx) => `
+          <div class="card-photo" onclick="openLightbox(${idx})">
+            <img src="${photo.thumbnail}" loading="lazy" alt="${photo.name}" onerror="this.src='https://placehold.co/400x400/111a2e/white?text=Photo'">
+            <div class="card-overlay">
+              <div class="card-meta-row">
+                <span class="card-badge-time">${photo.date || 'সম্প্রতি'}</span>
+                ${photo.isSyncing ? '<span class="card-badge-syncing">সিঙ্ক...</span>' : (idx === 0 ? '<span class="card-badge-new">NEW</span>' : '')}
               </div>
             </div>
-          `;
-        }).join('');
+          </div>
+        `).join('');
       }
       lucide.createIcons();
-    }
-
-    // ❤️ Handle Card Like Button Click
-    function handleCardLikeClick(event, photoId) {
-      if (event) event.stopPropagation();
-      toggleLike(photoId);
-    }
-
-    // 💖 Double Click / Double Tap on Photo Card
-    function handleCardDblClick(event, photoId) {
-      if (event) event.stopPropagation();
-      const isLiked = !!userLikedPhotos[photoId];
-      if (!isLiked) {
-        toggleLike(photoId, true);
-      } else {
-        triggerBurstAnimation(photoId);
-      }
-    }
-
-    // 💖 Heart Burst Animation
-    function triggerBurstAnimation(photoId) {
-      const burst = document.getElementById(`burst-${photoId}`);
-      if (burst) {
-        burst.style.display = 'flex';
-        setTimeout(() => {
-          burst.style.display = 'none';
-        }, 700);
-      }
-    }
-
-    // ❤️ Central Toggle Like Logic
-    function toggleLike(photoId, forceBurst = true) {
-      const photo = currentPhotos.find(p => p.id === photoId);
-      if (!photo) return;
-
-      const isCurrentlyLiked = !!userLikedPhotos[photoId];
-      const delta = isCurrentlyLiked ? -1 : 1;
-
-      // ইউজার স্টেট আপডেট
-      if (isCurrentlyLiked) {
-        delete userLikedPhotos[photoId];
-      } else {
-        userLikedPhotos[photoId] = true;
-        if (forceBurst) triggerBurstAnimation(photoId);
-      }
-      localStorage.setItem('moments_liked_photos', JSON.stringify(userLikedPhotos));
-
-      // ফটো লাইক কাউন্ট অপটিমিস্টিক আপডেট
-      photo.likes = Math.max(0, (photo.likes || 0) + delta);
-      globalLikesCache[photoId] = photo.likes;
-      localStorage.setItem('moments_global_likes', JSON.stringify(globalLikesCache));
-
-      // UI আপডেট
-      updateCardLikeUI(photoId);
-      updateLightboxLikeUI();
-
-      // ব্যাকএন্ডে সিঙ্ক পাঠানো
-      syncLikeToBackend(photoId, delta);
-    }
-
-    // 🎨 Update Single Card Like UI without full re-render
-    function updateCardLikeUI(photoId) {
-      const card = document.getElementById(`card-${photoId}`);
-      if (!card) return;
-
-      const photo = currentPhotos.find(p => p.id === photoId);
-      const isLiked = !!userLikedPhotos[photoId];
-      const countSpan = document.getElementById(`like-count-${photoId}`);
-      const btn = card.querySelector('.card-like-btn');
-
-      if (countSpan && photo) countSpan.innerText = photo.likes || 0;
-      if (btn) {
-        if (isLiked) {
-          btn.classList.add('liked');
-          const svg = btn.querySelector('.like-svg');
-          if (svg) svg.setAttribute('fill', 'currentColor');
-        } else {
-          btn.classList.remove('liked');
-          const svg = btn.querySelector('.like-svg');
-          if (svg) svg.setAttribute('fill', 'none');
-        }
-      }
-    }
-
-    // 🌐 Sync Like with Google Apps Script
-    async function syncLikeToBackend(photoId, delta) {
-      try {
-        // ১. POST মেথড চেষ্টা
-        fetch(SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify({
-            action: 'like',
-            id: photoId,
-            delta: delta
-          })
-        }).catch(() => {});
-
-        // ২. GET মেথড ফলব্যাক (Cross-Origin নির্ভরযোগ্য)
-        fetch(`${SCRIPT_URL}?action=like&id=${encodeURIComponent(photoId)}&delta=${delta}`, {
-          method: 'GET',
-          mode: 'no-cors'
-        }).catch(() => {});
-      } catch (e) {
-        console.warn('Like sync failed:', e);
-      }
     }
 
     // 📤 Handle Multi-File Upload with Instant Preview & WebP
@@ -1522,7 +1146,6 @@
             name: webpFileName,
             timestamp: Date.now() + i + 1000,
             date: timeStr,
-            likes: 0,
             thumbnail: webpData,
             fullUrl: webpData,
             isSyncing: true
@@ -1547,7 +1170,6 @@
               target.id = resData.id;
               target.thumbnail = resData.viewUrl || webpData;
               target.fullUrl = resData.viewUrl || webpData;
-              target.likes = 0;
               delete target.isSyncing;
               renderGallery();
             }
@@ -1630,8 +1252,6 @@
 
     function updateLightboxContent() {
       const photo = currentPhotos[currentPhotoIndex];
-      if (!photo) return;
-
       const img = document.getElementById('lightbox-img');
       const counter = document.getElementById('lightbox-counter');
       const downloadBtn = document.getElementById('lightbox-download-btn');
@@ -1639,57 +1259,6 @@
       img.src = photo.fullUrl;
       counter.innerText = `${currentPhotoIndex + 1} / ${currentPhotos.length}`;
       downloadBtn.href = photo.fullUrl;
-
-      updateLightboxLikeUI();
-    }
-
-    function updateLightboxLikeUI() {
-      const photo = currentPhotos[currentPhotoIndex];
-      if (!photo) return;
-
-      const likeBtn = document.getElementById('lightbox-like-btn');
-      const likeCount = document.getElementById('lightbox-like-count');
-      const isLiked = !!userLikedPhotos[photo.id];
-
-      if (likeCount) likeCount.innerText = photo.likes || 0;
-      if (likeBtn) {
-        if (isLiked) {
-          likeBtn.classList.add('liked');
-        } else {
-          likeBtn.classList.remove('liked');
-        }
-      }
-      lucide.createIcons();
-    }
-
-    function toggleLikeLightbox(event) {
-      if (event) event.stopPropagation();
-      const photo = currentPhotos[currentPhotoIndex];
-      if (!photo) return;
-      toggleLike(photo.id, false);
-      showLightboxBurst();
-    }
-
-    function handleLightboxDblClick(event) {
-      if (event) event.stopPropagation();
-      const photo = currentPhotos[currentPhotoIndex];
-      if (!photo) return;
-      
-      const isLiked = !!userLikedPhotos[photo.id];
-      if (!isLiked) {
-        toggleLike(photo.id, false);
-      }
-      showLightboxBurst();
-    }
-
-    function showLightboxBurst() {
-      const burst = document.getElementById('lightbox-heart-burst');
-      if (burst) {
-        burst.style.display = 'flex';
-        setTimeout(() => {
-          burst.style.display = 'none';
-        }, 700);
-      }
     }
 
     function closeLightbox() {
