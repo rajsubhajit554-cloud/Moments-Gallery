@@ -106,11 +106,11 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 8, 17, 0.75);
+      background: rgba(5, 8, 17, 0.82);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--card-border);
-      padding: 12px 20px;
+      padding: 10px 16px;
       transition: all 0.3s;
     }
 
@@ -125,21 +125,21 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       cursor: pointer;
     }
 
     .brand-icon-wrap {
       position: relative;
-      width: 40px;
-      height: 40px;
-      border-radius: 13px;
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
       background: var(--accent-gradient);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
       padding: 1px;
     }
 
@@ -147,19 +147,15 @@
       width: 100%;
       height: 100%;
       background: #090e1a;
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background 0.3s;
     }
 
-    .brand-logo:hover .brand-icon-inner {
-      background: transparent;
-    }
-
     .brand-info h1 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
@@ -171,7 +167,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: #38bdf8;
       font-weight: 600;
       letter-spacing: 0.02em;
@@ -180,8 +176,8 @@
     .status-dot-ping {
       position: relative;
       display: flex;
-      height: 7px;
-      width: 7px;
+      height: 6px;
+      width: 6px;
     }
 
     .status-dot-ping span:first-child {
@@ -199,8 +195,8 @@
       position: relative;
       display: inline-flex;
       border-radius: 50%;
-      height: 7px;
-      width: 7px;
+      height: 6px;
+      width: 6px;
       background-color: #0284c7;
     }
 
@@ -211,16 +207,16 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .btn-icon {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--card-border);
       color: var(--text-main);
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -232,8 +228,7 @@
     .btn-icon:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: var(--accent-cyan);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
     }
 
     .btn-icon:active {
@@ -247,82 +242,80 @@
       max-width: 1050px;
       width: 100%;
       margin: 0 auto;
-      padding: 18px 16px 80px;
+      padding: 14px 12px 80px;
       flex: 1;
     }
 
-    /* Hero Section (Compact) */
+    /* Hero Section (Ultra Compact) */
     .hero-box {
       text-align: center;
-      padding: 6px 10px 18px;
+      padding: 4px 6px 14px;
     }
 
     .badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.22);
       color: var(--accent-cyan);
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       font-weight: 600;
-      padding: 4px 14px;
+      padding: 3px 12px;
       border-radius: 999px;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
+      margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-size: clamp(1.35rem, 3.8vw, 2rem);
       font-weight: 900;
       line-height: 1.2;
       letter-spacing: -0.02em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       background: linear-gradient(135deg, #ffffff 40%, #93c5fd 80%, #c084fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-desc {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-sub);
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     /* Compact & Sleek Upload Card */
     .upload-card-wrapper {
       position: relative;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
 
     .upload-card-glow {
       position: absolute;
       inset: -1px;
       background: var(--accent-gradient);
-      border-radius: 22px;
-      opacity: 0.25;
-      filter: blur(10px);
-      transition: opacity 0.4s ease;
+      border-radius: 18px;
+      opacity: 0.2;
+      filter: blur(8px);
+      transition: opacity 0.3s ease;
     }
 
     .upload-card-wrapper:hover .upload-card-glow,
     .upload-card-wrapper.dragover .upload-card-glow {
-      opacity: 0.55;
-      filter: blur(14px);
+      opacity: 0.5;
+      filter: blur(12px);
     }
 
     .upload-card {
       position: relative;
       background: var(--bg-surface);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 20px;
-      padding: 16px 18px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 16px;
+      padding: 12px 14px;
       text-align: center;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
     .upload-card-inner {
@@ -330,7 +323,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (min-width: 640px) {
@@ -338,48 +331,46 @@
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
-        padding: 4px 10px;
+        padding: 2px 6px;
       }
     }
 
     .upload-header-left {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
     }
 
     .upload-mini-icon {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
-      border-radius: 14px;
+      border-radius: 10px;
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(168, 85, 247, 0.15));
       border: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-cyan);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .upload-text-box h3 {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
       color: #fff;
     }
 
     .upload-text-box p {
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       color: var(--text-sub);
     }
 
     .upload-btn-group {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
     }
 
@@ -393,60 +384,44 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 10px 20px;
-      font-size: 0.9rem;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
       font-weight: 700;
-      border-radius: 14px;
+      border-radius: 11px;
       cursor: pointer;
       user-select: none;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
+      flex: 1;
+    }
+
+    @media (min-width: 640px) {
+      .upload-label-btn { flex: initial; }
     }
 
     .btn-gallery {
       background: var(--accent-gradient);
       color: #ffffff;
       border: none;
-      box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
-      flex: 1;
-    }
-
-    @media (min-width: 640px) {
-      .btn-gallery { flex: initial; }
+      box-shadow: 0 3px 12px rgba(56, 189, 248, 0.35);
     }
 
     .btn-gallery:hover {
-      box-shadow: 0 6px 24px rgba(56, 189, 248, 0.55);
       transform: translateY(-2px);
-    }
-
-    .btn-gallery:active {
-      transform: scale(0.97);
     }
 
     .btn-camera {
       background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       color: var(--text-main);
       backdrop-filter: blur(12px);
-      flex: 1;
-    }
-
-    @media (min-width: 640px) {
-      .btn-camera { flex: initial; }
     }
 
     .btn-camera:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(56, 189, 248, 0.5);
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(56, 189, 248, 0.4);
     }
 
-    .btn-camera:active {
-      transform: scale(0.97);
-    }
-
-    /* Hidden native inputs with standard IDs */
     .hidden-file-input {
       position: absolute;
       width: 1px;
@@ -458,28 +433,27 @@
       border: 0;
     }
 
-    /* Upload Progress Box */
+    /* Progress Box */
     .progress-container {
       display: none;
-      margin-top: 14px;
+      margin-top: 10px;
       background: rgba(9, 14, 26, 0.9);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 14px;
-      padding: 12px 16px;
+      border-radius: 11px;
+      padding: 10px 14px;
       text-align: left;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
     .progress-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .progress-track {
-      height: 6px;
+      height: 5px;
       background: rgba(255, 255, 255, 0.08);
       border-radius: 999px;
       overflow: hidden;
@@ -498,19 +472,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 18px;
-      padding-bottom: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--card-border);
     }
 
     .gallery-title-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .gallery-title-wrap h2 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
@@ -519,9 +493,9 @@
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
       border: 1px solid rgba(56, 189, 248, 0.3);
       color: var(--accent-cyan);
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       font-weight: 700;
-      padding: 2px 10px;
+      padding: 1px 8px;
       border-radius: 999px;
     }
 
@@ -529,13 +503,13 @@
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--card-border);
       color: var(--text-sub);
-      padding: 7px 14px;
-      font-size: 0.82rem;
+      padding: 5px 12px;
+      font-size: 0.76rem;
       font-weight: 600;
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       cursor: pointer;
       transition: all 0.2s;
     }
@@ -543,52 +517,77 @@
     .btn-pill-action:hover {
       background: rgba(255, 255, 255, 0.1);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Gallery Grid */
+    /* 📸 ULTRA-COMPACT SMARTPHONE GALLERY GRID */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(4, 1fr); /* 4 COLUMNS COMPACT PHOTO TILES ON MOBILE */
+      gap: 2.5px; /* TIGHT SEAMLESS GALLERY SPACING */
     }
 
-    @media (min-width: 600px) {
+    @media (max-width: 480px) {
+      .app-main {
+        padding: 6px 3px 70px;
+      }
+      .gallery-toolbar {
+        margin-bottom: 6px;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
       .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5px;
       }
     }
 
-    @media (min-width: 950px) {
+    @media (min-width: 481px) and (max-width: 768px) {
       .gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .gallery-grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 8px;
       }
     }
 
     .card-photo {
       position: relative;
-      border-radius: 20px;
+      border-radius: 3px; /* Clean micro-rounded gallery tile corners */
       overflow: hidden;
       aspect-ratio: 1 / 1;
       background: var(--bg-elevated);
-      border: 1px solid var(--card-border);
       cursor: pointer;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fadeInCard 0.4s ease forwards;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      transition: transform 0.15s ease, filter 0.15s ease;
+      animation: fadeInCard 0.25s ease forwards;
     }
 
     @keyframes fadeInCard {
-      from { opacity: 0; transform: translateY(12px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .card-photo:hover {
-      transform: translateY(-4px) scale(1.02);
-      border-color: var(--card-border-hover);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2);
+      transform: scale(1.04);
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-photo:active {
+      transform: scale(0.95);
+      filter: brightness(0.9);
     }
 
     .card-photo img {
@@ -596,94 +595,78 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
       background: #090e1a;
-    }
-
-    .card-photo:hover img {
-      transform: scale(1.08);
     }
 
     .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(5, 8, 17, 0.85) 0%, rgba(5, 8, 17, 0.2) 50%, transparent 100%);
-      opacity: 0.95;
+      background: linear-gradient(to top, rgba(5, 8, 17, 0.6) 0%, transparent 40%);
+      opacity: 0.92;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 10px 12px;
-      transition: opacity 0.2s;
+      padding: 2px 3px;
     }
 
     .card-meta-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2px;
     }
 
     .card-badge-time {
-      font-size: 0.7rem;
+      font-size: 0.48rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(0, 0, 0, 0.45);
-      padding: 2px 7px;
-      border-radius: 7px;
-      backdrop-filter: blur(6px);
+      color: rgba(255, 255, 255, 0.95);
+      background: rgba(0, 0, 0, 0.65);
+      padding: 1px 2.5px;
+      border-radius: 2px;
+      line-height: 1;
+      backdrop-filter: blur(4px);
     }
 
     .card-badge-new {
-      font-size: 0.65rem;
+      font-size: 0.46rem;
       font-weight: 700;
       color: #fff;
       background: linear-gradient(135deg, #0284c7, #38bdf8);
-      padding: 2px 6px;
-      border-radius: 6px;
+      padding: 1px 2.5px;
+      border-radius: 2px;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      line-height: 1;
     }
 
-    .card-quick-zoom {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
-      background: rgba(255, 255, 255, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .card-badge-syncing {
+      font-size: 0.46rem;
+      font-weight: 700;
       color: #fff;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.2s;
-    }
-
-    .card-photo:hover .card-quick-zoom {
-      opacity: 1;
-      transform: scale(1);
+      background: #eab308;
+      padding: 1px 2.5px;
+      border-radius: 2px;
+      line-height: 1;
     }
 
     /* States (Loading & Empty) */
     .empty-state-box {
       grid-column: 1 / -1;
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 16px;
       background: var(--bg-surface);
       border: 1px solid var(--card-border);
-      border-radius: 22px;
+      border-radius: 16px;
       backdrop-filter: blur(16px);
     }
 
     .spinner-ring {
-      width: 38px;
-      height: 38px;
+      width: 32px;
+      height: 32px;
       border: 3px solid rgba(56, 189, 248, 0.2);
       border-radius: 50%;
       border-top-color: var(--accent-cyan);
       animation: spin 0.8s linear infinite;
-      margin: 0 auto 14px;
+      margin: 0 auto 12px;
     }
 
     @keyframes spin {
@@ -701,9 +684,9 @@
       z-index: 999;
       flex-direction: column;
       justify-content: space-between;
-      padding: 16px;
+      padding: 14px;
       opacity: 0;
-      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.3s ease;
     }
 
     .lightbox-modal.active {
@@ -729,12 +712,12 @@
       max-width: 950px;
       margin: 0 auto;
       width: 100%;
-      padding: 8px 0;
+      padding: 6px 0;
     }
 
     .lightbox-img-box {
       max-width: 100%;
-      max-height: 72vh;
+      max-height: 74vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -742,21 +725,21 @@
 
     .lightbox-img-box img {
       max-width: 100%;
-      max-height: 72vh;
-      border-radius: 18px;
+      max-height: 74vh;
+      border-radius: 14px;
       object-fit: contain;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      box-shadow: 0 16px 45px rgba(0,0,0,0.85);
     }
 
     .nav-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid var(--card-border);
       color: #ffffff;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -767,12 +750,11 @@
     }
 
     .nav-arrow:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-50%) scale(1.1);
+      background: rgba(255, 255, 255, 0.25);
     }
 
-    .arrow-left { left: 8px; }
-    .arrow-right { right: 8px; }
+    .arrow-left { left: 6px; }
+    .arrow-right { right: 6px; }
 
     .lightbox-actions-footer {
       max-width: 950px;
@@ -780,8 +762,8 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      gap: 12px;
-      padding-top: 10px;
+      gap: 10px;
+      padding-top: 8px;
     }
 
     /* QR Code Card Modal */
@@ -805,51 +787,51 @@
       position: relative;
       background: linear-gradient(145deg, #0d162a, #070c17);
       border: 1px solid rgba(56, 189, 248, 0.3);
-      border-radius: 30px;
-      padding: 30px 22px;
+      border-radius: 26px;
+      padding: 26px 20px;
       text-align: center;
-      max-width: 380px;
+      max-width: 360px;
       width: 100%;
       box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 35px rgba(56, 189, 248, 0.18);
     }
 
     .qr-frame {
       background: #ffffff;
-      padding: 14px;
-      border-radius: 20px;
+      padding: 12px;
+      border-radius: 18px;
       display: inline-block;
-      margin: 18px 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin: 16px 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
     .qr-frame img {
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
       object-fit: contain;
       display: block;
-      border-radius: 12px;
+      border-radius: 10px;
     }
 
     /* Toast */
     .toast-pill {
       position: fixed;
-      bottom: 28px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
       background: rgba(13, 22, 42, 0.95);
       border: 1px solid var(--accent-cyan);
       color: #ffffff;
-      padding: 12px 26px;
+      padding: 10px 22px;
       border-radius: 999px;
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       font-weight: 600;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(56, 189, 248, 0.3);
       z-index: 9999;
       backdrop-filter: blur(16px);
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .toast-pill.show {
@@ -872,7 +854,7 @@
       <div class="brand-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <div class="brand-icon-wrap">
           <div class="brand-icon-inner">
-            <i data-lucide="camera" style="color: #38bdf8; width: 20px; height: 20px;"></i>
+            <i data-lucide="camera" style="color: #38bdf8; width: 18px; height: 18px;"></i>
           </div>
         </div>
         <div class="brand-info">
@@ -889,10 +871,10 @@
 
       <div class="nav-actions">
         <button class="btn-icon" onclick="openQrModal()" title="QR Code দেখুন">
-          <i data-lucide="qr-code" style="width: 20px; height: 20px;"></i>
+          <i data-lucide="qr-code" style="width: 18px; height: 18px;"></i>
         </button>
         <button class="btn-icon" onclick="loadGallery(true)" title="গ্যালারি রিফ্রেশ করুন">
-          <i data-lucide="refresh-cw" id="refresh-icon" style="width: 20px; height: 20px;"></i>
+          <i data-lucide="refresh-cw" id="refresh-icon" style="width: 18px; height: 18px;"></i>
         </button>
       </div>
     </div>
@@ -904,21 +886,21 @@
     <!-- Hero Header -->
     <section class="hero-box">
       <div class="badge-pill">
-        <i data-lucide="sparkles" style="width: 13px; height: 13px;"></i>
+        <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i>
         <span>লাইভ মেমোরিজ পোর্টাল</span>
       </div>
       <h2 class="hero-title">ইভেন্টের মুহূর্তগুলো শেয়ার করুন ✨</h2>
-      <p class="hero-desc">আপনার ছবিগুলো ড্রাইভে আপলোড করুন এবং সবার শেয়ার করা মুহূর্তগুলো একসাথে উপভোগ করুন।</p>
+      <p class="hero-desc">আপনার ছবিগুলো ড্রাইভে আপলোড করুন এবং সবার শেয়ার করা মুহূর্তগুলো উপভোগ করুন।</p>
     </section>
 
-    <!-- Compact Upload Card with Native Labels for 100% Reliable Camera/Gallery Trigger -->
+    <!-- Compact Upload Card -->
     <section class="upload-card-wrapper" id="drop-zone-wrapper">
       <div class="upload-card-glow"></div>
       <div class="upload-card" id="drop-zone">
         <div class="upload-card-inner">
           <div class="upload-header-left">
             <div class="upload-mini-icon">
-              <i data-lucide="cloud-upload" style="width: 22px; height: 22px;"></i>
+              <i data-lucide="cloud-upload" style="width: 20px; height: 20px;"></i>
             </div>
             <div class="upload-text-box">
               <h3>ছবি আপলোড করুন</h3>
@@ -927,20 +909,18 @@
           </div>
 
           <div class="upload-btn-group">
-            <!-- Native Accessible Labels directly linked to Inputs -->
             <label for="file-picker" class="upload-label-btn btn-gallery">
-              <i data-lucide="images" style="width: 17px; height: 17px;"></i>
+              <i data-lucide="images" style="width: 15px; height: 15px;"></i>
               <span>গ্যালারি ব্রাউজ</span>
             </label>
 
             <label for="camera-picker" class="upload-label-btn btn-camera">
-              <i data-lucide="camera" style="width: 17px; height: 17px; color: #38bdf8;"></i>
+              <i data-lucide="camera" style="width: 15px; height: 15px; color: #38bdf8;"></i>
               <span>ক্যামেরা ওপেন</span>
             </label>
           </div>
         </div>
 
-        <!-- Hidden Native File Inputs -->
         <input type="file" id="file-picker" class="hidden-file-input" accept="image/*" multiple onchange="handleFiles(this.files)">
         <input type="file" id="camera-picker" class="hidden-file-input" accept="image/*" capture="environment" onchange="handleFiles(this.files)">
 
@@ -965,16 +945,16 @@
           <span class="badge-count font-mono" id="photo-count">0</span>
         </div>
         <button class="btn-pill-action" onclick="loadGallery(true)">
-          <i data-lucide="rotate-cw" style="width: 14px; height: 14px;"></i>
+          <i data-lucide="rotate-cw" style="width: 13px; height: 13px;"></i>
           <span>রিফ্রেশ</span>
         </button>
       </div>
 
-      <!-- Photos Grid -->
+      <!-- Photos Grid (Native 3-Column Smartphone Gallery Grid) -->
       <div class="gallery-grid" id="gallery-grid">
         <div class="empty-state-box">
           <div class="spinner-ring"></div>
-          <p style="color: var(--text-sub); font-size: 0.92rem;">গ্যালারির ছবি লোড হচ্ছে...</p>
+          <p style="color: var(--text-sub); font-size: 0.88rem;">গ্যালারির ছবি লোড হচ্ছে...</p>
         </div>
       </div>
     </section>
@@ -984,15 +964,15 @@
   <!-- Lightbox Modal -->
   <div class="lightbox-modal" id="lightbox">
     <div class="lightbox-nav-header">
-      <span class="font-mono" style="font-size: 0.9rem; color: var(--text-sub);" id="lightbox-counter">1 / 1</span>
+      <span class="font-mono" style="font-size: 0.85rem; color: var(--text-sub);" id="lightbox-counter">1 / 1</span>
       <button class="btn-icon" onclick="closeLightbox()">
-        <i data-lucide="x" style="width: 22px; height: 22px;"></i>
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
       </button>
     </div>
 
     <div class="lightbox-viewport">
       <button class="nav-arrow arrow-left" onclick="prevPhoto(event)">
-        <i data-lucide="chevron-left" style="width: 26px; height: 26px;"></i>
+        <i data-lucide="chevron-left" style="width: 24px; height: 24px;"></i>
       </button>
 
       <div class="lightbox-img-box">
@@ -1000,17 +980,17 @@
       </div>
 
       <button class="nav-arrow arrow-right" onclick="nextPhoto(event)">
-        <i data-lucide="chevron-right" style="width: 26px; height: 26px;"></i>
+        <i data-lucide="chevron-right" style="width: 24px; height: 24px;"></i>
       </button>
     </div>
 
     <div class="lightbox-actions-footer">
       <a id="lightbox-download-btn" class="upload-label-btn btn-gallery" style="text-decoration: none;" href="#" target="_blank" download>
-        <i data-lucide="download" style="width: 17px; height: 17px;"></i>
+        <i data-lucide="download" style="width: 15px; height: 15px;"></i>
         <span>ডাউনলোড করুন</span>
       </a>
       <button class="upload-label-btn btn-camera" style="cursor: pointer;" onclick="shareCurrentPhoto()">
-        <i data-lucide="share-2" style="width: 17px; height: 17px;"></i>
+        <i data-lucide="share-2" style="width: 15px; height: 15px;"></i>
         <span>শেয়ার</span>
       </button>
     </div>
@@ -1019,13 +999,13 @@
   <!-- VIP QR Code Modal -->
   <div class="qr-modal" id="qr-modal" onclick="closeQrModal(event)">
     <div class="qr-card-vip" onclick="event.stopPropagation()">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <h3 style="font-size: 1.2rem; font-weight: 800;">QR কোড স্ক্যান করুন</h3>
-        <button class="btn-icon" onclick="closeQrModal(null)" style="width: 32px; height: 32px; border-radius: 10px;">
-          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <h3 style="font-size: 1.15rem; font-weight: 800;">QR কোড স্ক্যান করুন</h3>
+        <button class="btn-icon" onclick="closeQrModal(null)" style="width: 30px; height: 30px; border-radius: 8px;">
+          <i data-lucide="x" style="width: 15px; height: 15px;"></i>
         </button>
       </div>
-      <p style="font-size: 0.85rem; color: var(--text-sub); line-height: 1.5;">
+      <p style="font-size: 0.82rem; color: var(--text-sub); line-height: 1.4;">
         যেকেউ এই QR কোডটি স্ক্যান করে যেকোনো ফোন থেকে ফটো আপলোড ও দেখতে পারবেন।
       </p>
       
@@ -1033,8 +1013,8 @@
         <img src="qr-code.png" alt="QR Code" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(window.location.href)">
       </div>
       
-      <button class="upload-label-btn btn-gallery" style="width: 100%; border-radius: 14px;" onclick="copyPageLink()">
-        <i data-lucide="copy" style="width: 17px; height: 17px;"></i>
+      <button class="upload-label-btn btn-gallery" style="width: 100%; border-radius: 12px;" onclick="copyPageLink()">
+        <i data-lucide="copy" style="width: 15px; height: 15px;"></i>
         <span>ওয়েবসাইটের লিঙ্ক কপি করুন</span>
       </button>
     </div>
@@ -1042,7 +1022,7 @@
 
   <!-- Toast Notification -->
   <div class="toast-pill" id="toast">
-    <i data-lucide="check-circle-2" style="width: 18px; height: 18px; color: #38bdf8;"></i>
+    <i data-lucide="check-circle-2" style="width: 17px; height: 17px; color: #38bdf8;"></i>
     <span id="toast-msg">সফল হয়েছে</span>
   </div>
 
@@ -1104,7 +1084,7 @@
       }
     }
 
-    // 🎨 Render Grid with Newest Images at Top
+    // 🎨 Render Grid with Smartphone Gallery 3-Column Layout
     function renderGallery() {
       const grid = document.getElementById('gallery-grid');
       document.getElementById('photo-count').innerText = currentPhotos.length;
@@ -1112,9 +1092,9 @@
       if (currentPhotos.length === 0) {
         grid.innerHTML = `
           <div class="empty-state-box">
-            <i data-lucide="images" style="width: 48px; height: 48px; color: var(--text-dim); margin: 0 auto 12px;"></i>
-            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 4px;">এখনো কোনো ছবি নেই</h4>
-            <p style="color: var(--text-sub); font-size: 0.88rem;">প্রথম ছবিটি আপলোড করে গ্যালারি শুরু করুন! ✨</p>
+            <i data-lucide="images" style="width: 44px; height: 44px; color: var(--text-dim); margin: 0 auto 10px;"></i>
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 3px;">এখনো কোনো ছবি নেই</h4>
+            <p style="color: var(--text-sub); font-size: 0.85rem;">প্রথম ছবিটি আপলোড করে গ্যালারি শুরু করুন! ✨</p>
           </div>
         `;
       } else {
@@ -1123,14 +1103,8 @@
             <img src="${photo.thumbnail}" loading="lazy" alt="${photo.name}" onerror="this.src='https://placehold.co/400x400/111a2e/white?text=Photo'">
             <div class="card-overlay">
               <div class="card-meta-row">
-                <span class="card-badge-time">
-                  <i data-lucide="clock" style="width: 11px; height: 11px;"></i>
-                  <span>${photo.date || 'সম্প্রতি'}</span>
-                </span>
-                ${idx === 0 ? '<span class="card-badge-new">নতুন</span>' : ''}
-                <span class="card-quick-zoom">
-                  <i data-lucide="maximize-2" style="width: 13px; height: 13px;"></i>
-                </span>
+                <span class="card-badge-time">${photo.date || 'সম্প্রতি'}</span>
+                ${photo.isSyncing ? '<span class="card-badge-syncing">সিঙ্ক...</span>' : (idx === 0 ? '<span class="card-badge-new">NEW</span>' : '')}
               </div>
             </div>
           </div>
@@ -1139,7 +1113,7 @@
       lucide.createIcons();
     }
 
-    // 📤 Handle Multi-File Upload & Client-side Compression
+    // 📤 Handle Multi-File Upload with Instant Preview & WebP
     async function handleFiles(files) {
       if (!files || files.length === 0 || isUploading) return;
       isUploading = true;
@@ -1152,58 +1126,66 @@
       progressBox.style.display = 'block';
       let uploadedCount = 0;
       const totalFiles = files.length;
-      const newItems = [];
 
       for (let i = 0; i < totalFiles; i++) {
         const file = files[i];
         const percent = Math.round((i / totalFiles) * 100);
         progressPercent.innerText = `${percent}%`;
         progressFill.style.width = `${percent}%`;
-        progressStatus.innerText = `ড্রাইভে প্রসেস হচ্ছে (${i + 1}/${totalFiles}): ${file.name.substring(0, 15)}...`;
+        progressStatus.innerText = `প্রসেস হচ্ছে (${i + 1}/${totalFiles})...`;
 
         try {
-          const base64Data = await resizeAndCompressImage(file);
-          
+          const webpData = await convertToFastWebP(file);
+          const webpFileName = (file.name.replace(/\.[^/.]+$/, "") || ('Photo_' + Date.now())) + '.webp';
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+          const tempId = 'temp_' + Date.now() + '_' + i;
+          const optimisticItem = {
+            id: tempId,
+            name: webpFileName,
+            timestamp: Date.now() + i + 1000,
+            date: timeStr,
+            thumbnail: webpData,
+            fullUrl: webpData,
+            isSyncing: true
+          };
+
+          currentPhotos.unshift(optimisticItem);
+          renderGallery();
+
           const uploadRes = await fetch(SCRIPT_URL, {
             method: 'POST',
             body: JSON.stringify({
               action: 'upload',
-              name: file.name,
-              file: base64Data
+              name: webpFileName,
+              file: webpData
             })
           });
 
           const resData = await uploadRes.json();
           if (resData && resData.success) {
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            
-            newItems.unshift({
-              id: resData.id,
-              name: resData.name,
-              timestamp: Date.now() + i,
-              date: timeStr,
-              thumbnail: resData.viewUrl || base64Data,
-              fullUrl: resData.viewUrl || base64Data
-            });
+            const target = currentPhotos.find(p => p.id === tempId);
+            if (target) {
+              target.id = resData.id;
+              target.thumbnail = resData.viewUrl || webpData;
+              target.fullUrl = resData.viewUrl || webpData;
+              delete target.isSyncing;
+              renderGallery();
+            }
           }
 
           uploadedCount++;
         } catch (error) {
-          console.error('Upload Failed for:', file.name, error);
+          console.error('Upload error:', error);
         }
-      }
-
-      if (newItems.length > 0) {
-        currentPhotos = [...newItems, ...currentPhotos];
-        renderGallery();
       }
 
       progressFill.style.width = '100%';
       progressPercent.innerText = '100%';
-      progressStatus.innerText = `✅ ${uploadedCount} টি ছবি ড্রাইভে সেভ হয়েছে!`;
+      progressStatus.innerText = `✅ সম্পূর্ণ হয়েছে!`;
       
-      showToast(`${uploadedCount} টি ছবি সফলভাবে সবার উপরে যোগ হয়েছে! 🎉`);
+      showToast(`${uploadedCount} টি ছবি সফলভাবে সেভ হয়েছে! ⚡`);
 
       setTimeout(() => {
         progressBox.style.display = 'none';
@@ -1211,11 +1193,11 @@
         isUploading = false;
         document.getElementById('file-picker').value = '';
         document.getElementById('camera-picker').value = '';
-      }, 2000);
+      }, 1200);
     }
 
-    // 🖼️ Smart Image Resize & Compression
-    function resizeAndCompressImage(file) {
+    // ⚡ Ultra-Fast Lightweight WebP Compressor
+    function convertToFastWebP(file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onerror = reject;
@@ -1223,7 +1205,7 @@
           const img = new Image();
           img.onerror = reject;
           img.onload = function() {
-            const MAX_DIM = 1600;
+            const MAX_DIM = 1200;
             let width = img.width;
             let height = img.height;
 
@@ -1245,8 +1227,11 @@
             const ctx = canvas.getContext('2d');
             ctx.drawImage(img, 0, 0, width, height);
 
-            const base64 = canvas.toDataURL('image/jpeg', 0.82);
-            resolve(base64);
+            let webpBase64 = canvas.toDataURL('image/webp', 0.75);
+            if (!webpBase64.startsWith('data:image/webp')) {
+              webpBase64 = canvas.toDataURL('image/jpeg', 0.75);
+            }
+            resolve(webpBase64);
           };
           img.src = e.target.result;
         };
@@ -1354,7 +1339,7 @@
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
-      }, 3200);
+      }, 2500);
     }
 
     // 📂 Drag and Drop Setup
